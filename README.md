@@ -36,14 +36,6 @@ Simply ask questions in natural language, and the system will find the most rele
 | **Vector Search** | FAISS (CPU) | Fast similarity search over embeddings |
 | **Video Processing** | FFmpeg, yt-dlp | Download and process video content |
 
-## 📋 Prerequisites
-
-- Python 3.8 or higher
-- FFmpeg installed on your system
-- 4GB+ RAM recommended
-- Internet connection (for downloading videos)
-
-
 
 ## 📊 System Architecture
 
@@ -95,26 +87,7 @@ Simply ask questions in natural language, and the system will find the most rele
               └──────────────────┘
 ```
 
-## 💡 The Technical Challenge
 
-### Why Video Search is Hard
-
-While **text RAG** (Retrieval-Augmented Generation) is largely a solved problem, **video search** presents unique challenges:
-
-1. **Multimodal Synchronization**: Aligning audio transcripts with visual frames requires precise timestamp coordination
-2. **Unstructured Data**: Videos don't have inherent structure—you must create it through processing
-3. **Computational Complexity**: Processing hours of video generates massive amounts of data
-4. **Semantic Alignment**: Matching user intent across both spoken words and visual content
-5. **Scale**: Enterprise video libraries can contain thousands of hours of content
-
-### This Project's Solution
-
-This implementation demonstrates handling these challenges through:
-- **Robust Pipeline**: Automated video ingestion, processing, and indexing
-- **Temporal Alignment**: Precise synchronization between transcript segments and video frames  
-- **Efficient Indexing**: FAISS-based vector search for sub-second query times
-- **Multimodal Fusion**: Combined text and visual embeddings for comprehensive search
-- **Production-Ready**: Handles various video formats, resolutions, and content types
 
 ## 🎯 How It Works
 
@@ -130,12 +103,6 @@ This implementation demonstrates handling these challenges through:
 6. **Indexing**: Builds FAISS index from combined (text + visual) embeddings
 7. **Search**: User queries are encoded and matched against the index using cosine similarity
 
-## 📈 Performance
-
-- **Processing Speed**: ~5 minutes of video processed in ~2-3 minutes (CPU)
-- **Search Latency**: < 100ms for typical queries
-- **Index Size**: ~10-15 MB per hour of video content
-- **Accuracy**: High semantic relevance for natural language queries
 
 ## 📄 License
 
